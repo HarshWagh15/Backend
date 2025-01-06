@@ -56,8 +56,47 @@ const http = require('http');
 
 
 
-const Server = http.createServer(function(req,res){
-    res.end("Hi, Harsh");
+// const Server = http.createServer(function(req,res){
+//     res.end("Hi, Harsh");
+// })
+
+// Server.listen(3000);
+
+
+
+
+//Express sample code
+
+const express = require('express')
+const app = express()
+
+//Middleware 
+app.use(function(req,res,next){
+    console.log("Middleware");
+    next();
 })
 
-Server.listen(3000);
+//Middleware
+
+app.get('/' , function (req, res) {         // '/' is the route path , function is a request handler which is an function.
+  res.send('Hello Harsh')
+})
+
+app.get('/about',function(req,res){
+    res.send("About Page");
+})
+
+
+
+//Error Handlers
+
+app.use((err,req,res,next)=>{
+    console.error(err.stack);
+    res.status(500).send("Something broke !");
+})
+app.listen(3000)
+
+
+// Nodemon usefull for auto restart server when code changes.
+
+
