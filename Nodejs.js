@@ -70,6 +70,10 @@ const http = require('http');
 const express = require('express')
 const app = express()
 
+//Session and Cookies
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+
 //Middleware 
 app.use(function(req,res,next){
     console.log("Middleware");
@@ -99,4 +103,4 @@ app.listen(3000)
 
 // Nodemon usefull for auto restart server when code changes.
 
-
+// Form Handling
