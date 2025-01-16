@@ -9,11 +9,11 @@
 <body>
     <div class="main w-full min-h-screen bg-zinc-900 text-white p-10">
         <a class="text-cyan-500 inline-block mb-10 mt-3"   href="/">Go back to home.</a>
-        <form action="/create" method="post">
-            <input type="text" class="block px-5 py-2 bg-zinc-800 w-1/4 rounded-md outline-none" id="task" placeholder="Previous Name" name="title">
-            <input type="text" class="block px-5 py-2 bg-zinc-800 w-1/4 rounded-md outline-none mt-2" id="task" placeholder="New Name" name="title">
+        <form action="/edit" method="post">
+            <input type="text" class="block px-5 py-2 bg-zinc-800 w-1/4 rounded-md outline-none" id="task" placeholder="Previous Name" name="previous" value="<%=filename %>">
+            <input type="text" class="block px-5 py-2 bg-zinc-800 w-1/4 rounded-md outline-none mt-2" id="task" placeholder="New Name" name="new">
             <!-- <textarea class="block px-5 mt-2 py-2 bg-zinc-800 resize-none w-full rounded-md outline-none" placeholder="Write your task details here..." name="details"></textarea> -->
-            <input class="mt-2 px-5 py-2 bg-cyan-500 rounded-md" type="submit" value="Create Task">
+            <input class="mt-2 px-5 py-2 bg-yellow-500 rounded-md" type="submit" value="Update Name">
         </form>
     </div>
 </body>
